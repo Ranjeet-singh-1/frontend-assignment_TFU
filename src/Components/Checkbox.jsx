@@ -3,10 +3,10 @@ import './Checkbox.css'
 
 function Checkbox(props) {
   return (
-    <div className='check'>
-      <input type="checkbox" name="" id="checkbox" />
-      <label htmlFor="checkbox">{props.label}</label>
-    </div>
+    <label className='check'>
+      <input type="checkbox"/>
+      <span >{props.label}</span>
+    </label>
   )
 }
 
