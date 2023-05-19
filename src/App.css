@@ -1,0 +1,14 @@
+body{
+    background-color: wheat;
+}
+
+.box{
+    width: 400px;
+    background-color:white;
+    margin: auto;
+}
+
+.box ul{
+    list-style: none;
+    padding: 0;
+}

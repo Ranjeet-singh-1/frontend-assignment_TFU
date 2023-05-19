@@ -3,7 +3,7 @@ div.check{
     /* justify-content: center; */
     align-items: center;
 }
-input{
+.check input{
     appearance: none;
     -webkit-appearance: none;
     height: 15px;
@@ -12,18 +12,19 @@ input{
     border-radius: 50%;
     margin: 0 2px;
 }
-input:hover{
+.check input:hover{
     border: solid rgb(76, 73, 73) 1px;
     cursor: pointer;
 }
-input:checked{
+.check input:checked{
     background-color: #198754 ;
     border-width: 0;
 }
 
-label{
+span{
     position: relative;
-    top: -0.5px;
+    top: -1.5px;
     margin-left: 4px;
     cursor: pointer;
+    font-size: 17px;
 }

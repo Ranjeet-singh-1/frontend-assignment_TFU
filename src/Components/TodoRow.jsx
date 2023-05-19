@@ -4,7 +4,7 @@ import './TodoRow.css'
 import React, { useState } from 'react'
 
 
-function TodoRow() {
+function TodoRow(props) {
 const [ishover,sethover]=useState(false);
 const handleMouseEnter=()=>{
   sethover(true);
@@ -15,7 +15,7 @@ const handleMouseLeave=()=>{
   return (
     <div>
       <div onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave} className="wrapper">
-        <Checkbox label='Random text' />
+        <Checkbox label={props.content} />
         {ishover && <Button  size='small' content='X'/>}
       </div>
     </div>
