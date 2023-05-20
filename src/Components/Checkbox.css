@@ -1,27 +1,30 @@
-div.check{
+/* This css is creted for Checkbox Component */
+div.check {
     display: flex;
-    /* justify-content: center; */
     align-items: center;
 }
-.check input{
-    appearance: none;
-    -webkit-appearance: none;
+
+.check input {
+    appearance: none;           /*To remove default css on checkbox*/
+    -webkit-appearance: none;   /*To remove default css on checkbox*/
     height: 15px;
     width: 15px;
     border: solid gray 1px;
     border-radius: 50%;
     margin: 0 2px;
 }
-.check input:hover{
+
+.check input:hover {
     border: solid rgb(76, 73, 73) 1px;
     cursor: pointer;
 }
-.check input:checked{
-    background-color: #198754 ;
+
+.check input:checked {
+    background-color: #198754;
     border-width: 0;
 }
 
-span{
+span {
     position: relative;
     top: -1.5px;
     margin-left: 4px;
