@@ -4,32 +4,35 @@ import Button from './Components/Button';
 import TodoRow from './Components/TodoRow';
 
 function App() {
-  const [todoList,setTodoList]=useState([]);
-  const [inputText,setInputText]=useState('');
+  const [todoList, setTodoList] = useState([]);
+  const [inputText, setInputText] = useState('');
 
-  const handleInput=(e)=>{
+  const handleInput = (e) => {
     setInputText(e.target.value);
   }
+  
   const addListElement=()=>{
-    // let listElement=document.createElement('li');
-    // listElement.innerHTML=<TodoRow/>;
-    // let todoList=document.querySelector('.anslist');
-    // todoList.appendChild(listElement);
-    if (inputText.trim() !== '') {
-      const newComponent = <TodoRow key={todoList.length} content={inputText}/>;
-      setTodoList([...todoList, newComponent]);
-      setInputText('');
-    }
+    setTodoList([...todoList,inputText]);
+    setInputText('');
   }
+
+  const handleDeleteTodo=(content)=>{
+    const updatedTodoList=todoList.filter((task)=>task !== content);
+    setTodoList(updatedTodoList);
+  }
+
+
 
   return (
     <>
       <div className='box p-3 rounded'>
         <h4>Todo</h4>
         <ul className='anslist'>
-          {todoList}
+          {todoList.map((task)=>(
+            <TodoRow key={task} content={task} onDelete={handleDeleteTodo}/>
+          ))}
         </ul>
-        <hr className='mt-5'/>
+        <hr className='mt-5' />
         <div className="row  justify-content-center align-items-center">
           <div className="col-9"><input onChange={handleInput} type="text" name="taskName" id="task" value={inputText} placeholder='Add task here...' /></div>
           <div className="col-3"><div onClick={addListElement}><Button size='big' content='Add' /></div></div>
